@@ -1,2 +1,5 @@
-require "classes/players.rb"
-require "questions/questions.rb"
+require "./classes/game"
+
+new_game = Game.new
+
+new_game.start
