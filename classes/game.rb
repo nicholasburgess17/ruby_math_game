@@ -5,19 +5,15 @@ class Game
 
     def initialize
         @players = []
-        # @player_1 = Player.new(gets.chomp)
-        # @player_2 = Player.new(gets.chomp)
       end
       def start
         puts "Get your calculators ready!"
 
         print "Player 1, your name? "
         @player_1 = Player.new(gets.chomp)
-        # @players << player_1
 
         print "Player 2? "
         @player_2 = Player.new(gets.chomp)
-        # @players << player_2
 
         puts "#{@player_1.name}, you're up first!"
         question = Question.new
@@ -45,11 +41,11 @@ class Game
 
         if player_answer == question.answer.to_s
             puts "Correct"
-            puts "#{@player_2.name}: " + @player_2.lives.to_s + "/3, #{@player_1.name}: " + @player_1.lives.to_s + "/3"
+            puts "#{@player_2.name}: " + "#{@player_2.lives} + /3, #{@player_1.name}:  + #{@player_1.lives} + /3"
         else 
             puts "That ain't right"
             @player_2.lose_life
-            puts "#{@player_2.name}: " + @player_2.lives.to_s + "/3, #{@player_1.name}: " + @player_1.lives.to_s + "/3"
+            puts "#{@player_2.name}: " + "#{@player_2.lives} + /3, #{@player_1.name}:  + #{@player_1.lives} + /3"
         end
         if @player_1.lives.to_s == "0"
             puts "Winner is player 2 with a score of #{@player_2.lives.to_s}/3"
